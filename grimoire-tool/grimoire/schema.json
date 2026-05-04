@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schema_version": { "type": "string" },
+    "metadata": { "type": "object" },
+    "monsters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer" },
+          "name": { "type": "string" },
+          "size": { "type": "string" },
+          "type": { "type": "string" },
+          "challenge_rating": { "type": "number" },
+          "xp": { "type": "integer" },
+          "armor_class": { "type": "integer" },
+          "hit_points": { "type": "integer" },
+          "hit_dice": { "type": "string" },
+          "speed": { "type": "object" },
+          "ability_scores": { "type": "object" },
+          "traits": { "type": "array" },
+          "actions": { "type": "array" },
+          "multiattack": { "type": ["object", "null"] }
+        },
+        "required": [
+          "id", "name", "size", "type", "challenge_rating", "xp", 
+          "armor_class", "hit_points", "hit_dice", "speed", 
+          "ability_scores", "traits", "actions"
+        ]
+      }
+    }
+  },
+  "required": ["schema_version", "monsters"]
+}
