@@ -37,7 +37,7 @@ export function MonsterCard({ monster, partySize, avgLevel, onBack }: Props) {
         {/* Placeholder Image Box */}
         <div style={{ flex: '1 1 300px', minHeight: '300px', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--panel-border)', background: 'rgba(0,0,0,0.2)' }}>
           <img 
-            src="/werewolf.png" 
+            src={`${import.meta.env.BASE_URL}werewolf.png`} 
             alt={monster.name} 
             style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
             onError={(e) => { e.currentTarget.style.display = 'none'; }}
