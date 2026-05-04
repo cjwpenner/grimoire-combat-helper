@@ -56,4 +56,6 @@ export interface Monster {
   multiattack?: Multiattack | null;
   reactions?: any[];
   v1_unsupported_features?: string[];
+  has_image?: boolean;
+  image_url?: string;
 }
