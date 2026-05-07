@@ -14644,11 +14644,30 @@
                 "patterns": null
             },
             "v1_unsupported_features": [
-                "spellcaster",
-                "legendary"
+                "spellcaster"
             ],
             "has_image": true,
-            "image_url": "images/monster_230.jpg"
+            "image_url": "images/monster_230.jpg",
+            "legendary_actions": [
+                {
+                    "id": "hooves",
+                    "name": "Hooves",
+                    "kind": "legendary",
+                    "description": "The unicorn makes one attack with its hooves."
+                },
+                {
+                    "id": "shimmering-shield-costs-2-actions",
+                    "name": "Shimmering Shield (Costs 2 Actions)",
+                    "kind": "legendary",
+                    "description": "The unicorn creates a shimmering, magical field around itself or another creature it can see within 60 ft. of it. The target gains a +2 bonus to AC until the end of the unicorn's next turn."
+                },
+                {
+                    "id": "heal-self-costs-3-actions",
+                    "name": "Heal Self (Costs 3 Actions)",
+                    "kind": "legendary",
+                    "description": "The unicorn magically regains 11 (2d8 + 2) hit points."
+                }
+            ]
         },
         {
             "id": 231,
@@ -17797,11 +17816,33 @@
                 "description": "The aboleth makes three tentacle attacks.",
                 "patterns": null
             },
-            "v1_unsupported_features": [
-                "legendary"
-            ],
+            "v1_unsupported_features": [],
             "has_image": true,
-            "image_url": "images/monster_269.jpg"
+            "image_url": "images/monster_269.jpg",
+            "legendary_actions": [
+                {
+                    "id": "detect",
+                    "name": "Detect",
+                    "kind": "legendary",
+                    "description": "The aboleth makes a Wisdom (Perception) check."
+                },
+                {
+                    "id": "tail-swipe",
+                    "name": "Tail Swipe",
+                    "kind": "legendary",
+                    "description": "The aboleth makes one tail attack."
+                },
+                {
+                    "id": "psychic-drain-costs-2-actions",
+                    "name": "Psychic Drain (Costs 2 Actions)",
+                    "kind": "legendary",
+                    "description": "One creature charmed by the aboleth takes 10 (3d6) psychic damage, and the aboleth regains hit points equal to the damage the creature takes.",
+                    "damage": {
+                        "formula": "3d6",
+                        "type": "psychic"
+                    }
+                }
+            ]
         },
         {
             "id": 270,
@@ -18609,11 +18650,30 @@
                 "patterns": null
             },
             "v1_unsupported_features": [
-                "spellcaster",
-                "legendary"
+                "spellcaster"
             ],
             "has_image": true,
-            "image_url": "images/monster_279.jpg"
+            "image_url": "images/monster_279.jpg",
+            "legendary_actions": [
+                {
+                    "id": "claw-attack",
+                    "name": "Claw Attack",
+                    "kind": "legendary",
+                    "description": "The sphinx makes one claw attack."
+                },
+                {
+                    "id": "teleport-costs-2-actions",
+                    "name": "Teleport (Costs 2 Actions)",
+                    "kind": "legendary",
+                    "description": "The sphinx magically teleports, along with any equipment it is wearing or carrying, up to 120 feet to an unoccupied space it can see."
+                },
+                {
+                    "id": "cast-a-spell-costs-3-actions",
+                    "name": "Cast a Spell (Costs 3 Actions)",
+                    "kind": "legendary",
+                    "description": "The sphinx casts a spell from its list of prepared spells, using a spell slot as normal."
+                }
+            ]
         },
         {
             "id": 280,
@@ -19115,11 +19175,33 @@
                 "description": "The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.",
                 "patterns": null
             },
-            "v1_unsupported_features": [
-                "legendary"
-            ],
+            "v1_unsupported_features": [],
             "has_image": true,
-            "image_url": "images/monster_285.jpg"
+            "image_url": "images/monster_285.jpg",
+            "legendary_actions": [
+                {
+                    "id": "detect",
+                    "name": "Detect",
+                    "kind": "legendary",
+                    "description": "The dragon makes a Wisdom (Perception) check."
+                },
+                {
+                    "id": "tail-attack",
+                    "name": "Tail Attack",
+                    "kind": "legendary",
+                    "description": "The dragon makes a tail attack."
+                },
+                {
+                    "id": "wing-attack-costs-2-actions",
+                    "name": "Wing Attack (Costs 2 Actions)",
+                    "kind": "legendary",
+                    "description": "The dragon beats its wings. Each creature within 10 ft. of the dragon must succeed on a DC 19 Dexterity saving throw or take 13 (2d6 + 6) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+                    "damage": {
+                        "formula": "2d6+6",
+                        "type": "bludgeoning"
+                    }
+                }
+            ]
         },
         {
             "id": 286,
@@ -19233,11 +19315,33 @@
                 "description": "The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.",
                 "patterns": null
             },
-            "v1_unsupported_features": [
-                "legendary"
-            ],
+            "v1_unsupported_features": [],
             "has_image": true,
-            "image_url": "images/monster_286.jpg"
+            "image_url": "images/monster_286.jpg",
+            "legendary_actions": [
+                {
+                    "id": "detect",
+                    "name": "Detect",
+                    "kind": "legendary",
+                    "description": "The dragon makes a Wisdom (Perception) check."
+                },
+                {
+                    "id": "tail-attack",
+                    "name": "Tail Attack",
+                    "kind": "legendary",
+                    "description": "The dragon makes a tail attack."
+                },
+                {
+                    "id": "wing-attack-costs-2-actions",
+                    "name": "Wing Attack (Costs 2 Actions)",
+                    "kind": "legendary",
+                    "description": "The dragon beats its wings. Each creature within 10 ft. of the dragon must succeed on a DC 19 Dexterity saving throw or take 13 (2d6 + 6) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+                    "damage": {
+                        "formula": "2d6+6",
+                        "type": "bludgeoning"
+                    }
+                }
+            ]
         },
         {
             "id": 287,
@@ -19724,11 +19828,33 @@
                 "description": "The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.",
                 "patterns": null
             },
-            "v1_unsupported_features": [
-                "legendary"
-            ],
+            "v1_unsupported_features": [],
             "has_image": true,
-            "image_url": "images/monster_291.jpg"
+            "image_url": "images/monster_291.jpg",
+            "legendary_actions": [
+                {
+                    "id": "detect",
+                    "name": "Detect",
+                    "kind": "legendary",
+                    "description": "The dragon makes a Wisdom (Perception) check."
+                },
+                {
+                    "id": "tail-attack",
+                    "name": "Tail Attack",
+                    "kind": "legendary",
+                    "description": "The dragon makes a tail attack."
+                },
+                {
+                    "id": "wing-attack-costs-2-actions",
+                    "name": "Wing Attack (Costs 2 Actions)",
+                    "kind": "legendary",
+                    "description": "The dragon beats its wings. Each creature within 10 ft. of the dragon must succeed on a DC 19 Dexterity saving throw or take 13 (2d6 + 6) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+                    "damage": {
+                        "formula": "2d6+6",
+                        "type": "bludgeoning"
+                    }
+                }
+            ]
         },
         {
             "id": 292,
@@ -19838,11 +19964,33 @@
                 "description": "The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.",
                 "patterns": null
             },
-            "v1_unsupported_features": [
-                "legendary"
-            ],
+            "v1_unsupported_features": [],
             "has_image": true,
-            "image_url": "images/monster_292.jpg"
+            "image_url": "images/monster_292.jpg",
+            "legendary_actions": [
+                {
+                    "id": "detect",
+                    "name": "Detect",
+                    "kind": "legendary",
+                    "description": "The dragon makes a Wisdom (Perception) check."
+                },
+                {
+                    "id": "tail-attack",
+                    "name": "Tail Attack",
+                    "kind": "legendary",
+                    "description": "The dragon makes a tail attack."
+                },
+                {
+                    "id": "wing-attack-costs-2-actions",
+                    "name": "Wing Attack (Costs 2 Actions)",
+                    "kind": "legendary",
+                    "description": "The dragon beats its wings. Each creature within 10 ft. of the dragon must succeed on a DC 19 Dexterity saving throw or take 13 (2d6 + 6) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+                    "damage": {
+                        "formula": "13d6+6",
+                        "type": "bludgeoning"
+                    }
+                }
+            ]
         },
         {
             "id": 293,
@@ -20062,11 +20210,33 @@
                 "description": "The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.",
                 "patterns": null
             },
-            "v1_unsupported_features": [
-                "legendary"
-            ],
+            "v1_unsupported_features": [],
             "has_image": true,
-            "image_url": "images/monster_294.jpg"
+            "image_url": "images/monster_294.jpg",
+            "legendary_actions": [
+                {
+                    "id": "detect",
+                    "name": "Detect",
+                    "kind": "legendary",
+                    "description": "The dragon makes a Wisdom (Perception) check."
+                },
+                {
+                    "id": "tail-attack",
+                    "name": "Tail Attack",
+                    "kind": "legendary",
+                    "description": "The dragon makes a tail attack."
+                },
+                {
+                    "id": "wing-attack-costs-2-actions",
+                    "name": "Wing Attack (Costs 2 Actions)",
+                    "kind": "legendary",
+                    "description": "The dragon beats its wings. Each creature within 10 ft. of the dragon must succeed on a DC 20 Dexterity saving throw or take 14 (2d6 + 7) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+                    "damage": {
+                        "formula": "2d6+7",
+                        "type": "bludgeoning"
+                    }
+                }
+            ]
         },
         {
             "id": 295,
@@ -20183,11 +20353,33 @@
                 "description": "The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.",
                 "patterns": null
             },
-            "v1_unsupported_features": [
-                "legendary"
-            ],
+            "v1_unsupported_features": [],
             "has_image": true,
-            "image_url": "images/monster_295.jpg"
+            "image_url": "images/monster_295.jpg",
+            "legendary_actions": [
+                {
+                    "id": "detect",
+                    "name": "Detect",
+                    "kind": "legendary",
+                    "description": "The dragon makes a Wisdom (Perception) check."
+                },
+                {
+                    "id": "tail-attack",
+                    "name": "Tail Attack",
+                    "kind": "legendary",
+                    "description": "The dragon makes a tail attack."
+                },
+                {
+                    "id": "wing-attack-costs-2-actions",
+                    "name": "Wing Attack (Costs 2 Actions)",
+                    "kind": "legendary",
+                    "description": "The dragon beats its wings. Each creature within 10 ft. of the dragon must succeed on a DC 19 Dexterity saving throw or take 13 (2d6 + 6) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+                    "damage": {
+                        "formula": "2d6+6",
+                        "type": "bludgeoning"
+                    }
+                }
+            ]
         },
         {
             "id": 296,
@@ -20269,11 +20461,42 @@
                 "patterns": null
             },
             "v1_unsupported_features": [
-                "spellcaster",
-                "legendary"
+                "spellcaster"
             ],
             "has_image": true,
-            "image_url": "images/monster_296.jpg"
+            "image_url": "images/monster_296.jpg",
+            "legendary_actions": [
+                {
+                    "id": "attack",
+                    "name": "Attack",
+                    "kind": "legendary",
+                    "description": "The mummy lord makes one attack with its rotting fist or uses its Dreadful Glare."
+                },
+                {
+                    "id": "blinding-dust",
+                    "name": "Blinding Dust",
+                    "kind": "legendary",
+                    "description": "Blinding dust and sand swirls magically around the mummy lord. Each creature within 5 feet of the mummy lord must succeed on a DC 16 Constitution saving throw or be blinded until the end of the creature's next turn."
+                },
+                {
+                    "id": "blasphemous-word-costs-2-actions",
+                    "name": "Blasphemous Word (Costs 2 Actions)",
+                    "kind": "legendary",
+                    "description": "The mummy lord utters a blasphemous word. Each non-undead creature within 10 feet of the mummy lord that can hear the magical utterance must succeed on a DC 16 Constitution saving throw or be stunned until the end of the mummy lord's next turn."
+                },
+                {
+                    "id": "channel-negative-energy-costs-2-actions",
+                    "name": "Channel Negative Energy (Costs 2 Actions)",
+                    "kind": "legendary",
+                    "description": "The mummy lord magically unleashes negative energy. Creatures within 60 feet of the mummy lord, including ones behind barriers and around corners, can't regain hit points until the end of the mummy lord's next turn."
+                },
+                {
+                    "id": "whirlwind-of-sand-costs-2-actions",
+                    "name": "Whirlwind of Sand (Costs 2 Actions)",
+                    "kind": "legendary",
+                    "description": "The mummy lord magically transforms into a whirlwind of sand, moves up to 60 feet, and reverts to its normal form. While in whirlwind form, the mummy lord is immune to all damage, and it can't be grappled, petrified, knocked prone, restrained, or stunned. Equipment worn or carried by the mummy lord remain in its possession."
+                }
+            ]
         },
         {
             "id": 297,
@@ -20454,11 +20677,33 @@
                 "description": "The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.",
                 "patterns": null
             },
-            "v1_unsupported_features": [
-                "legendary"
-            ],
+            "v1_unsupported_features": [],
             "has_image": true,
-            "image_url": "images/monster_298.jpg"
+            "image_url": "images/monster_298.jpg",
+            "legendary_actions": [
+                {
+                    "id": "detect",
+                    "name": "Detect",
+                    "kind": "legendary",
+                    "description": "The dragon makes a Wisdom (Perception) check."
+                },
+                {
+                    "id": "tail-attack",
+                    "name": "Tail Attack",
+                    "kind": "legendary",
+                    "description": "The dragon makes a tail attack."
+                },
+                {
+                    "id": "wing-attack-costs-2-actions",
+                    "name": "Wing Attack (Costs 2 Actions)",
+                    "kind": "legendary",
+                    "description": "The dragon beats its wings. Each creature within 10 ft. of the dragon must succeed on a DC 20 Dexterity saving throw or take 14 (2d6 + 7) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+                    "damage": {
+                        "formula": "2d6+6",
+                        "type": "bludgeoning"
+                    }
+                }
+            ]
         },
         {
             "id": 299,
@@ -20574,11 +20819,33 @@
                 "description": "The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.",
                 "patterns": null
             },
-            "v1_unsupported_features": [
-                "legendary"
-            ],
+            "v1_unsupported_features": [],
             "has_image": true,
-            "image_url": "images/monster_299.jpg"
+            "image_url": "images/monster_299.jpg",
+            "legendary_actions": [
+                {
+                    "id": "detect",
+                    "name": "Detect",
+                    "kind": "legendary",
+                    "description": "The dragon makes a Wisdom (Perception) check."
+                },
+                {
+                    "id": "tail-attack",
+                    "name": "Tail Attack",
+                    "kind": "legendary",
+                    "description": "The dragon makes a tail attack."
+                },
+                {
+                    "id": "wing-attack-costs-2-actions",
+                    "name": "Wing Attack (Costs 2 Actions)",
+                    "kind": "legendary",
+                    "description": "The dragon beats its wings. Each creature within 10 ft. of the dragon must succeed on a DC 22 Dexterity saving throw or take 15 (2d6 + 8) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+                    "damage": {
+                        "formula": "2d6+8",
+                        "type": "bludgeoning"
+                    }
+                }
+            ]
         },
         {
             "id": 300,
@@ -20977,11 +21244,33 @@
                 "description": "The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.",
                 "patterns": null
             },
-            "v1_unsupported_features": [
-                "legendary"
-            ],
+            "v1_unsupported_features": [],
             "has_image": true,
-            "image_url": "images/monster_303.jpg"
+            "image_url": "images/monster_303.jpg",
+            "legendary_actions": [
+                {
+                    "id": "detect",
+                    "name": "Detect",
+                    "kind": "legendary",
+                    "description": "The dragon makes a Wisdom (Perception) check."
+                },
+                {
+                    "id": "tail-attack",
+                    "name": "Tail Attack",
+                    "kind": "legendary",
+                    "description": "The dragon makes a tail attack."
+                },
+                {
+                    "id": "wing-attack-costs-2-actions",
+                    "name": "Wing Attack (Costs 2 Actions)",
+                    "kind": "legendary",
+                    "description": "The dragon beats its wings. Each creature within 10 ft. of the dragon must succeed on a DC 22 Dexterity saving throw or take 15 (2d6 + 8) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+                    "damage": {
+                        "formula": "2d6+8",
+                        "type": "bludgeoning"
+                    }
+                }
+            ]
         },
         {
             "id": 304,
@@ -21090,11 +21379,33 @@
                 "description": "The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.",
                 "patterns": null
             },
-            "v1_unsupported_features": [
-                "legendary"
-            ],
+            "v1_unsupported_features": [],
             "has_image": true,
-            "image_url": "images/monster_304.jpg"
+            "image_url": "images/monster_304.jpg",
+            "legendary_actions": [
+                {
+                    "id": "detect",
+                    "name": "Detect",
+                    "kind": "legendary",
+                    "description": "The dragon makes a Wisdom (Perception) check."
+                },
+                {
+                    "id": "tail-attack",
+                    "name": "Tail Attack",
+                    "kind": "legendary",
+                    "description": "The dragon makes a tail attack."
+                },
+                {
+                    "id": "wing-attack-costs-2-actions",
+                    "name": "Wing Attack (Costs 2 Actions)",
+                    "kind": "legendary",
+                    "description": "The dragon beats its wings. Each creature within 10 ft. of the dragon must succeed on a DC 22 Dexterity saving throw or take 15 (2d6 + 8) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+                    "damage": {
+                        "formula": "2d6+8",
+                        "type": "bludgeoning"
+                    }
+                }
+            ]
         },
         {
             "id": 305,
@@ -21175,11 +21486,30 @@
                 "patterns": null
             },
             "v1_unsupported_features": [
-                "spellcaster",
-                "legendary"
+                "spellcaster"
             ],
             "has_image": true,
-            "image_url": "images/monster_305.jpg"
+            "image_url": "images/monster_305.jpg",
+            "legendary_actions": [
+                {
+                    "id": "claw-attack",
+                    "name": "Claw Attack",
+                    "kind": "legendary",
+                    "description": "The sphinx makes one claw attack."
+                },
+                {
+                    "id": "teleport-costs-2-actions",
+                    "name": "Teleport (Costs 2 Actions)",
+                    "kind": "legendary",
+                    "description": "The sphinx magically teleports, along with any equipment it is wearing or carrying, up to 120 feet to an unoccupied space it can see."
+                },
+                {
+                    "id": "cast-a-spell-costs-3-actions",
+                    "name": "Cast a Spell (Costs 3 Actions)",
+                    "kind": "legendary",
+                    "description": "The sphinx casts a spell from its list of prepared spells, using a spell slot as normal."
+                }
+            ]
         },
         {
             "id": 306,
@@ -21496,11 +21826,33 @@
                 "description": "The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.",
                 "patterns": null
             },
-            "v1_unsupported_features": [
-                "legendary"
-            ],
+            "v1_unsupported_features": [],
             "has_image": true,
-            "image_url": "images/monster_308.jpg"
+            "image_url": "images/monster_308.jpg",
+            "legendary_actions": [
+                {
+                    "id": "detect",
+                    "name": "Detect",
+                    "kind": "legendary",
+                    "description": "The dragon makes a Wisdom (Perception) check."
+                },
+                {
+                    "id": "tail-attack",
+                    "name": "Tail Attack",
+                    "kind": "legendary",
+                    "description": "The dragon makes a tail attack."
+                },
+                {
+                    "id": "wing-attack-costs-2-actions",
+                    "name": "Wing Attack (Costs 2 Actions)",
+                    "kind": "legendary",
+                    "description": "The dragon beats its wings. Each creature within 15 ft. of the dragon must succeed on a DC 22 Dexterity saving throw or take 15 (2d6 + 8) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+                    "damage": {
+                        "formula": "2d6+8",
+                        "type": "bludgeoning"
+                    }
+                }
+            ]
         },
         {
             "id": 309,
@@ -21614,11 +21966,33 @@
                 "description": "The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.",
                 "patterns": null
             },
-            "v1_unsupported_features": [
-                "legendary"
-            ],
+            "v1_unsupported_features": [],
             "has_image": true,
-            "image_url": "images/monster_309.jpg"
+            "image_url": "images/monster_309.jpg",
+            "legendary_actions": [
+                {
+                    "id": "detect",
+                    "name": "Detect",
+                    "kind": "legendary",
+                    "description": "The dragon makes a Wisdom (Perception) check."
+                },
+                {
+                    "id": "tail-attack",
+                    "name": "Tail Attack",
+                    "kind": "legendary",
+                    "description": "The dragon makes a tail attack."
+                },
+                {
+                    "id": "wing-attack-costs-2-actions",
+                    "name": "Wing Attack (Costs 2 Actions)",
+                    "kind": "legendary",
+                    "description": "The dragon beats its wings. Each creature within 15 ft. of the dragon must succeed on a DC 22 Dexterity saving throw or take 15 (2d6 + 8) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+                    "damage": {
+                        "formula": "2d6+8",
+                        "type": "bludgeoning"
+                    }
+                }
+            ]
         },
         {
             "id": 310,
@@ -21845,11 +22219,33 @@
                 "description": "The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.",
                 "patterns": null
             },
-            "v1_unsupported_features": [
-                "legendary"
-            ],
+            "v1_unsupported_features": [],
             "has_image": true,
-            "image_url": "images/monster_311.jpg"
+            "image_url": "images/monster_311.jpg",
+            "legendary_actions": [
+                {
+                    "id": "detect",
+                    "name": "Detect",
+                    "kind": "legendary",
+                    "description": "The dragon makes a Wisdom (Perception) check."
+                },
+                {
+                    "id": "tail-attack",
+                    "name": "Tail Attack",
+                    "kind": "legendary",
+                    "description": "The dragon makes a tail attack."
+                },
+                {
+                    "id": "wing-attack-costs-2-actions",
+                    "name": "Wing Attack (Costs 2 Actions)",
+                    "kind": "legendary",
+                    "description": "The dragon beats its wings. Each creature within 15 ft. of the dragon must succeed on a DC 23 Dexterity saving throw or take 15 (2d6 + 8) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+                    "damage": {
+                        "formula": "2d6+8",
+                        "type": "bludgeoning"
+                    }
+                }
+            ]
         },
         {
             "id": 312,
@@ -21965,11 +22361,33 @@
                 "description": "The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.",
                 "patterns": null
             },
-            "v1_unsupported_features": [
-                "legendary"
-            ],
+            "v1_unsupported_features": [],
             "has_image": true,
-            "image_url": "images/monster_312.jpg"
+            "image_url": "images/monster_312.jpg",
+            "legendary_actions": [
+                {
+                    "id": "detect",
+                    "name": "Detect",
+                    "kind": "legendary",
+                    "description": "The dragon makes a Wisdom (Perception) check."
+                },
+                {
+                    "id": "tail-attack",
+                    "name": "Tail Attack",
+                    "kind": "legendary",
+                    "description": "The dragon makes a tail attack."
+                },
+                {
+                    "id": "wing-attack-costs-2-actions",
+                    "name": "Wing Attack (Costs 2 Actions)",
+                    "kind": "legendary",
+                    "description": "The dragon beats its wings. Each creature within 15 ft. of the dragon must succeed on a DC 23 Dexterity saving throw or take 15 (2d6 + 8) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+                    "damage": {
+                        "formula": "2d6+8",
+                        "type": "bludgeoning"
+                    }
+                }
+            ]
         },
         {
             "id": 313,
@@ -22046,11 +22464,40 @@
             ],
             "multiattack": null,
             "v1_unsupported_features": [
-                "spellcaster",
-                "legendary"
+                "spellcaster"
             ],
             "has_image": true,
-            "image_url": "images/monster_313.jpg"
+            "image_url": "images/monster_313.jpg",
+            "legendary_actions": [
+                {
+                    "id": "cantrip",
+                    "name": "Cantrip",
+                    "kind": "legendary",
+                    "description": "The lich casts a cantrip."
+                },
+                {
+                    "id": "paralyzing-touch-costs-2-actions",
+                    "name": "Paralyzing Touch (Costs 2 Actions)",
+                    "kind": "legendary",
+                    "description": "The lich uses its Paralyzing Touch."
+                },
+                {
+                    "id": "frightening-gaze-costs-2-actions",
+                    "name": "Frightening Gaze (Costs 2 Actions)",
+                    "kind": "legendary",
+                    "description": "The lich fixes its gaze on one creature it can see within 10 feet of it. The target must succeed on a DC 18 Wisdom saving throw against this magic or become frightened for 1 minute. The frightened target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a target's saving throw is successful or the effect ends for it, the target is immune to the lich's gaze for the next 24 hours."
+                },
+                {
+                    "id": "disrupt-life-costs-3-actions",
+                    "name": "Disrupt Life (Costs 3 Actions)",
+                    "kind": "legendary",
+                    "description": "Each living creature within 20 feet of the lich must make a DC 18 Constitution saving throw against this magic, taking 21 (6d6) necrotic damage on a failed save, or half as much damage on a successful one.",
+                    "damage": {
+                        "formula": "6d6",
+                        "type": "necrotic"
+                    }
+                }
+            ]
         },
         {
             "id": 314,
@@ -22153,11 +22600,34 @@
                 "patterns": null
             },
             "v1_unsupported_features": [
-                "spellcaster",
-                "legendary"
+                "spellcaster"
             ],
             "has_image": true,
-            "image_url": "images/monster_314.jpg"
+            "image_url": "images/monster_314.jpg",
+            "legendary_actions": [
+                {
+                    "id": "teleport",
+                    "name": "Teleport",
+                    "kind": "legendary",
+                    "description": "The solar magically teleports, along with any equipment it is wearing or carrying, up to 120 ft. to an unoccupied space it can see."
+                },
+                {
+                    "id": "searing-burst-costs-2-actions",
+                    "name": "Searing Burst (Costs 2 Actions)",
+                    "kind": "legendary",
+                    "description": "The solar emits magical, divine energy. Each creature of its choice in a 10 -foot radius must make a DC 23 Dexterity saving throw, taking 14 (4d6) fire damage plus 14 (4d6) radiant damage on a failed save, or half as much damage on a successful one.",
+                    "damage": {
+                        "formula": "4d6",
+                        "type": "fire"
+                    }
+                },
+                {
+                    "id": "blinding-gaze-costs-3-actions",
+                    "name": "Blinding Gaze (Costs 3 Actions)",
+                    "kind": "legendary",
+                    "description": "The solar targets one creature it can see within 30 ft. of it. If the target can see it, the target must succeed on a DC 15 Constitution saving throw or be blinded until magic such as the lesser restoration spell removes the blindness."
+                }
+            ]
         },
         {
             "id": 315,
@@ -22277,11 +22747,33 @@
                 "description": "The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.",
                 "patterns": null
             },
-            "v1_unsupported_features": [
-                "legendary"
-            ],
+            "v1_unsupported_features": [],
             "has_image": true,
-            "image_url": "images/monster_315.jpg"
+            "image_url": "images/monster_315.jpg",
+            "legendary_actions": [
+                {
+                    "id": "detect",
+                    "name": "Detect",
+                    "kind": "legendary",
+                    "description": "The dragon makes a Wisdom (Perception) check."
+                },
+                {
+                    "id": "tail-attack",
+                    "name": "Tail Attack",
+                    "kind": "legendary",
+                    "description": "The dragon makes a tail attack."
+                },
+                {
+                    "id": "wing-attack-costs-2-actions",
+                    "name": "Wing Attack (Costs 2 Actions)",
+                    "kind": "legendary",
+                    "description": "The dragon beats its wings. Each creature within 15 ft. of the dragon must succeed on a DC 24 Dexterity saving throw or take 16 (2d6 + 9) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+                    "damage": {
+                        "formula": "2d6+9",
+                        "type": "bludgeoning"
+                    }
+                }
+            ]
         },
         {
             "id": 316,
@@ -22398,11 +22890,33 @@
                 "description": "The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.",
                 "patterns": null
             },
-            "v1_unsupported_features": [
-                "legendary"
-            ],
+            "v1_unsupported_features": [],
             "has_image": true,
-            "image_url": "images/monster_316.jpg"
+            "image_url": "images/monster_316.jpg",
+            "legendary_actions": [
+                {
+                    "id": "detect",
+                    "name": "Detect",
+                    "kind": "legendary",
+                    "description": "The dragon makes a Wisdom (Perception) check."
+                },
+                {
+                    "id": "tail-attack",
+                    "name": "Tail Attack",
+                    "kind": "legendary",
+                    "description": "The dragon makes a tail attack."
+                },
+                {
+                    "id": "wing-attack-costs-2-actions",
+                    "name": "Wing Attack (Costs 2 Actions)",
+                    "kind": "legendary",
+                    "description": "The dragon beats its wings. Each creature within 15 ft. of the dragon must succeed on a DC 23 Dexterity saving throw or take 15 (2d6 + 8) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+                    "damage": {
+                        "formula": "2d6+8",
+                        "type": "bludgeoning"
+                    }
+                }
+            ]
         },
         {
             "id": 317,
@@ -22511,11 +23025,33 @@
                 "description": "The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.",
                 "patterns": null
             },
-            "v1_unsupported_features": [
-                "legendary"
-            ],
+            "v1_unsupported_features": [],
             "has_image": true,
-            "image_url": "images/monster_317.jpg"
+            "image_url": "images/monster_317.jpg",
+            "legendary_actions": [
+                {
+                    "id": "detect",
+                    "name": "Detect",
+                    "kind": "legendary",
+                    "description": "The dragon makes a Wisdom (Perception) check."
+                },
+                {
+                    "id": "tail-attack",
+                    "name": "Tail Attack",
+                    "kind": "legendary",
+                    "description": "The dragon makes a tail attack."
+                },
+                {
+                    "id": "wing-attack-costs-2-actions",
+                    "name": "Wing Attack (Costs 2 Actions)",
+                    "kind": "legendary",
+                    "description": "The dragon beats its wings. Each creature within 15 ft. of the dragon must succeed on a DC 24 Dexterity saving throw or take 16 (2d6 + 9) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+                    "damage": {
+                        "formula": "2d6+9",
+                        "type": "bludgeoning"
+                    }
+                }
+            ]
         },
         {
             "id": 318,
@@ -22631,11 +23167,33 @@
                 "description": "The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.",
                 "patterns": null
             },
-            "v1_unsupported_features": [
-                "legendary"
-            ],
+            "v1_unsupported_features": [],
             "has_image": true,
-            "image_url": "images/monster_318.jpg"
+            "image_url": "images/monster_318.jpg",
+            "legendary_actions": [
+                {
+                    "id": "detect",
+                    "name": "Detect",
+                    "kind": "legendary",
+                    "description": "The dragon makes a Wisdom (Perception) check."
+                },
+                {
+                    "id": "tail-attack",
+                    "name": "Tail Attack",
+                    "kind": "legendary",
+                    "description": "The dragon makes a tail attack."
+                },
+                {
+                    "id": "wing-attack-costs-2-actions",
+                    "name": "Wing Attack (Costs 2 Actions)",
+                    "kind": "legendary",
+                    "description": "The dragon beats its wings. Each creature within 15 ft. of the dragon must succeed on a DC 25 Dexterity saving throw or take 17 (2d6 + 10) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+                    "damage": {
+                        "formula": "2d6+10",
+                        "type": "bludgeoning"
+                    }
+                }
+            ]
         },
         {
             "id": 319,
@@ -22738,11 +23296,33 @@
                 "description": "The kraken makes three tentacle attacks, each of which it can replace with one use of Fling.",
                 "patterns": null
             },
-            "v1_unsupported_features": [
-                "legendary"
-            ],
+            "v1_unsupported_features": [],
             "has_image": true,
-            "image_url": "images/monster_319.jpg"
+            "image_url": "images/monster_319.jpg",
+            "legendary_actions": [
+                {
+                    "id": "tentacle-attack-or-fling",
+                    "name": "Tentacle Attack or Fling",
+                    "kind": "legendary",
+                    "description": "The kraken makes one tentacle attack or uses its Fling."
+                },
+                {
+                    "id": "lightning-storm-costs-2-actions",
+                    "name": "Lightning Storm (Costs 2 Actions)",
+                    "kind": "legendary",
+                    "description": "The kraken uses Lightning Storm."
+                },
+                {
+                    "id": "ink-cloud-costs-3-actions",
+                    "name": "Ink Cloud (Costs 3 Actions)",
+                    "kind": "legendary",
+                    "description": "While underwater, the kraken expels an ink cloud in a 60-foot radius. The cloud spreads around corners, and that area is heavily obscured to creatures other than the kraken. Each creature other than the kraken that ends its turn there must succeed on a DC 23 Constitution saving throw, taking 16 (3d10) poison damage on a failed save, or half as much damage on a successful one. A strong current disperses the cloud, which otherwise disappears at the end of the kraken's next turn.",
+                    "damage": {
+                        "formula": "3d10",
+                        "type": "poison"
+                    }
+                }
+            ]
         },
         {
             "id": 320,
@@ -22863,11 +23443,33 @@
                 "description": "The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.",
                 "patterns": null
             },
-            "v1_unsupported_features": [
-                "legendary"
-            ],
+            "v1_unsupported_features": [],
             "has_image": true,
-            "image_url": "images/monster_320.jpg"
+            "image_url": "images/monster_320.jpg",
+            "legendary_actions": [
+                {
+                    "id": "detect",
+                    "name": "Detect",
+                    "kind": "legendary",
+                    "description": "The dragon makes a Wisdom (Perception) check."
+                },
+                {
+                    "id": "tail-attack",
+                    "name": "Tail Attack",
+                    "kind": "legendary",
+                    "description": "The dragon makes a tail attack."
+                },
+                {
+                    "id": "wing-attack-costs-2-actions",
+                    "name": "Wing Attack (Costs 2 Actions)",
+                    "kind": "legendary",
+                    "description": "The dragon beats its wings. Each creature within 15 ft. of the dragon must succeed on a DC 25 Dexterity saving throw or take 17 (2d6 + 10) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+                    "damage": {
+                        "formula": "2d6+10",
+                        "type": "bludgeoning"
+                    }
+                }
+            ]
         },
         {
             "id": 321,
@@ -22976,11 +23578,33 @@
                 "description": "The dragon can use its Frightful Presence. It then makes three attacks: one with its bite and two with its claws.",
                 "patterns": null
             },
-            "v1_unsupported_features": [
-                "legendary"
-            ],
+            "v1_unsupported_features": [],
             "has_image": true,
-            "image_url": "images/monster_321.jpg"
+            "image_url": "images/monster_321.jpg",
+            "legendary_actions": [
+                {
+                    "id": "detect",
+                    "name": "Detect",
+                    "kind": "legendary",
+                    "description": "The dragon makes a Wisdom (Perception) check."
+                },
+                {
+                    "id": "tail-attack",
+                    "name": "Tail Attack",
+                    "kind": "legendary",
+                    "description": "The dragon makes a tail attack."
+                },
+                {
+                    "id": "wing-attack-costs-2-actions",
+                    "name": "Wing Attack (Costs 2 Actions)",
+                    "kind": "legendary",
+                    "description": "The dragon beats its wings. Each creature within 15 ft. of the dragon must succeed on a DC 25 Dexterity saving throw or take 17 (2d6 + 10) bludgeoning damage and be knocked prone. The dragon can then fly up to half its flying speed.",
+                    "damage": {
+                        "formula": "2d6+10",
+                        "type": "bludgeoning"
+                    }
+                }
+            ]
         },
         {
             "id": 322,
@@ -23105,11 +23729,29 @@
                 "description": "The tarrasque can use its Frightful Presence. It then makes five attacks: one with its bite, two with its claws, one with its horns, and one with its tail. It can use its Swallow instead of its bite.",
                 "patterns": null
             },
-            "v1_unsupported_features": [
-                "legendary"
-            ],
+            "v1_unsupported_features": [],
             "has_image": true,
-            "image_url": "images/monster_322.jpg"
+            "image_url": "images/monster_322.jpg",
+            "legendary_actions": [
+                {
+                    "id": "attack",
+                    "name": "Attack",
+                    "kind": "legendary",
+                    "description": "The tarrasque makes one claw attack or tail attack."
+                },
+                {
+                    "id": "move",
+                    "name": "Move",
+                    "kind": "legendary",
+                    "description": "The tarrasque moves up to half its speed."
+                },
+                {
+                    "id": "chomp-costs-2-actions",
+                    "name": "Chomp (Costs 2 Actions)",
+                    "kind": "legendary",
+                    "description": "The tarrasque makes one bite attack or uses its Swallow."
+                }
+            ]
         }
     ]
 }

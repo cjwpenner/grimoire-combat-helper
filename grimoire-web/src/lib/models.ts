@@ -58,4 +58,5 @@ export interface Monster {
   v1_unsupported_features?: string[];
   has_image?: boolean;
   image_url?: string;
+  legendary_actions?: Action[];
 }

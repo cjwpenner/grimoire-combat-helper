@@ -71,7 +71,7 @@ export function MonsterCard({ monster, partySize, avgLevel, onBack }: Props) {
             })}
           </div>
 
-          {monster.v1_unsupported_features && monster.v1_unsupported_features.length > 0 && (
+        {monster.v1_unsupported_features && monster.v1_unsupported_features.length > 0 && (
             <div className="glass-panel" style={{ background: 'rgba(239, 68, 68, 0.1)', borderColor: 'var(--danger)' }}>
               <span className="text-sm" style={{ color: '#fca5a5' }}>
                 ⚠ Tool does not model: {monster.v1_unsupported_features.join(', ')}
@@ -79,6 +79,45 @@ export function MonsterCard({ monster, partySize, avgLevel, onBack }: Props) {
             </div>
           )}
         </div>
+      </div>
+
+      <div className="mt-4">
+        <details className="glass-panel" style={{ cursor: 'pointer' }}>
+          <summary className="text-lg font-semibold" style={{ color: 'var(--accent-hover)', outline: 'none' }}>
+            Stat Block & Available Actions
+          </summary>
+          <div className="flex-col gap-4 mt-4 text-sm" style={{ cursor: 'default' }}>
+            
+            {monster.traits && monster.traits.length > 0 && (
+              <div>
+                <h4 className="font-semibold text-lg" style={{ color: 'var(--text-main)', borderBottom: '1px solid var(--panel-border)', marginBottom: '0.5rem' }}>Traits</h4>
+                {monster.traits.map(t => (
+                  <p key={t.name} className="mt-2"><strong>{t.name}.</strong> {t.description}</p>
+                ))}
+              </div>
+            )}
+            
+            {monster.actions && monster.actions.length > 0 && (
+              <div>
+                <h4 className="font-semibold text-lg" style={{ color: 'var(--text-main)', borderBottom: '1px solid var(--panel-border)', marginBottom: '0.5rem' }}>Actions</h4>
+                {monster.actions.map(a => (
+                  <p key={a.name} className="mt-2"><strong>{a.name}.</strong> {a.description}</p>
+                ))}
+              </div>
+            )}
+
+            {monster.legendary_actions && monster.legendary_actions.length > 0 && (
+              <div>
+                <h4 className="font-semibold text-lg" style={{ color: 'var(--text-main)', borderBottom: '1px solid var(--panel-border)', marginBottom: '0.5rem' }}>Legendary Actions</h4>
+                <p className="text-muted" style={{ fontStyle: 'italic', marginBottom: '0.5rem' }}>The monster can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The monster regains spent legendary actions at the start of its turn.</p>
+                {monster.legendary_actions.map(la => (
+                  <p key={la.name} className="mt-2"><strong>{la.name}.</strong> {la.description}</p>
+                ))}
+              </div>
+            )}
+
+          </div>
+        </details>
       </div>
 
       <div className="flex-col gap-4 mt-4">
