@@ -11,7 +11,7 @@ function App() {
   const [selectedMonster, setSelectedMonster] = useState<Monster | null>(null);
 
   useEffect(() => {
-    fetch(import.meta.env.BASE_URL + 'grimoire.json')
+    fetch(import.meta.env.BASE_URL + `grimoire.json?v=${new Date().getTime()}`)
       .then(res => res.json())
       .then(data => {
         setMonsters(data.monsters || []);
