@@ -21245,8 +21245,6 @@
                 "patterns": null
             },
             "v1_unsupported_features": [],
-            "has_image": true,
-            "image_url": "images/monster_303.jpg",
             "legendary_actions": [
                 {
                     "id": "detect",
@@ -21270,7 +21268,9 @@
                         "type": "bludgeoning"
                     }
                 }
-            ]
+            ],
+            "has_image": true,
+            "image_url": "images/monster_303.jpg"
         },
         {
             "id": 304,
@@ -21488,8 +21488,6 @@
             "v1_unsupported_features": [
                 "spellcaster"
             ],
-            "has_image": true,
-            "image_url": "images/monster_305.jpg",
             "legendary_actions": [
                 {
                     "id": "claw-attack",
@@ -21509,7 +21507,9 @@
                     "kind": "legendary",
                     "description": "The sphinx casts a spell from its list of prepared spells, using a spell slot as normal."
                 }
-            ]
+            ],
+            "has_image": true,
+            "image_url": "images/monster_305.jpg"
         },
         {
             "id": 306,

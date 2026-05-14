@@ -23,12 +23,12 @@ os.makedirs(IMAGE_DIR, exist_ok=True)
 
 def generate_image(monster):
     prompt = (
-        f"A hyper-detailed, biological field-guide illustration of a single isolated fantasy creature: "
+        f"A hyper-detailed, biological field-guide illustration of a fantasy creature: "
         f"{monster['name']} ({monster.get('size', 'medium')} {monster.get('type', 'beast')}). "
         "Setting: High fantasy Dungeons and Dragons. "
-        "CRITICAL INSTRUCTIONS: NO humans. NO adventurers. NO modern elements. NO corporate suits. NO vehicles. "
+        "CRITICAL INSTRUCTIONS: The creature MUST be situated in a rich, detailed, natural environment or dungeon background. NO plain white or transparent backgrounds. NO studio backdrops. NO humans. NO adventurers. NO modern elements. NO corporate suits. NO vehicles. "
         "NO text, NO words, NO letters, NO typography, NO watermarks. "
-        "The art style should be dark, gritty, cinematic, and strictly focused on the monster."
+        "The art style should be dark, gritty, cinematic, and fully illustrate the monster in its habitat."
     )
     
     print(f"Generating image for {monster['name']}...")
