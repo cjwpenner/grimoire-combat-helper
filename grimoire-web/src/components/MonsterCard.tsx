@@ -34,12 +34,12 @@ export function MonsterCard({ monster, partySize, avgLevel, onBack }: Props) {
       </button>
 
       <div className="glass-panel flex" style={{ gap: '2rem', flexWrap: 'wrap' }}>
-        {/* Placeholder Image Box */}
-        <div style={{ flex: '1 1 300px', minHeight: '300px', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--panel-border)', background: 'rgba(0,0,0,0.2)' }}>
+        {/* Image Box */}
+        <div style={{ flex: '1 1 300px', aspectRatio: '1 / 1', alignSelf: 'flex-start', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--panel-border)', background: 'rgba(0,0,0,0.2)' }}>
           <img 
             src={monster.has_image && monster.image_url ? `${import.meta.env.BASE_URL}${monster.image_url}` : `${import.meta.env.BASE_URL}werewolf.png`} 
             alt={monster.name} 
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} 
             onError={(e) => { e.currentTarget.style.display = 'none'; }}
           />
         </div>
