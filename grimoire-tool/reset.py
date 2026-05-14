@@ -8,7 +8,7 @@ def reset_ids():
     with open(GRIMOIRE_JSON_PATH, "r", encoding="utf-8") as f:
         data = json.load(f)
         
-    ids_to_reset = {39, 50, 52, 56, 90, 96, 110, 114, 123, 125, 139, 144, 146, 149, 152, 153, 156, 162, 163, 165, 166, 184, 197, 207, 208, 221, 233, 247, 250, 272, 274, 303, 305}
+    ids_to_reset = {166}
     for monster in data.get("monsters", []):
         if monster.get("id") in ids_to_reset:
             monster.pop("has_image", None)
