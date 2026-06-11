@@ -5,6 +5,7 @@ import { selectTurn, TurnData } from '../lib/selector';
 import StatBlock from './StatBlock';
 import { CombatTurn } from './CombatTurn';
 import { LayoutContextType } from './Layout';
+import { monsterImageUrl } from './MonsterCard';
 
 export default function MonsterDetail() {
   const { id } = useParams<{ id: string }>();
@@ -58,7 +59,17 @@ export default function MonsterDetail() {
       </div>
 
       {/* Tab Content */}
-      {tab === 'stat' && <StatBlock monster={monster} partyConfig={partyConfig} />}
+      {tab === 'stat' && (
+        <div className="flex flex-col gap-4">
+          <img
+            src={monsterImageUrl(monster)}
+            alt={monster.name}
+            className="w-full max-h-80 object-cover object-center rounded-xl border border-[var(--border-color)]"
+            onError={(e) => { e.currentTarget.style.display = 'none'; }}
+          />
+          <StatBlock monster={monster} partyConfig={partyConfig} />
+        </div>
+      )}
       {tab === 'combat' && (
         <div className="flex flex-col gap-4">
           {turns.map((t, idx) => (
