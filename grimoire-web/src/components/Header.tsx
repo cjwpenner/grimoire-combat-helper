@@ -1,45 +1,35 @@
 import React from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useTheme } from '../contexts/ThemeContext';
 
-interface HeaderProps {
-  partySize: number;
-  setPartySize: (n: number) => void;
-  avgLevel: number;
-  setAvgLevel: (n: number) => void;
-}
+export default function Header() {
+  const { theme, toggleTheme } = useTheme();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const isHome = location.pathname === '/';
 
-export function Header({ partySize, setPartySize, avgLevel, setAvgLevel }: HeaderProps) {
   return (
-    <header className="glass-panel flex justify-between items-center" style={{ gap: '1rem', flexWrap: 'wrap' }}>
-      <div>
-        <h1 className="text-xl">Josie's Grimoire</h1>
-        <span className="text-sm text-muted">Combat Helper Web v1.0</span>
-      </div>
-      <div className="flex gap-4 items-center">
-        <div className="flex-col gap-2">
-          <label className="text-sm font-semibold text-muted">Party Size</label>
-          <select 
-            value={partySize} 
-            onChange={(e) => setPartySize(parseInt(e.target.value) || 1)} 
-            style={{ width: '80px' }}
+    <header className="bg-[var(--header-bg)] text-[var(--text-primary)] px-4 py-4 safe-top flex items-center justify-between">
+      <div className="flex items-center gap-3">
+        {!isHome && (
+          <button
+            onClick={() => navigate(-1)}
+            className="text-2xl leading-none hover:opacity-70 transition"
+            aria-label="Go back"
           >
-            {[...Array(8)].map((_, i) => (
-              <option key={i+1} value={i+1}>{i+1}</option>
-            ))}
-          </select>
-        </div>
-        <div className="flex-col gap-2">
-          <label className="text-sm font-semibold text-muted">Avg Level</label>
-          <select 
-            value={avgLevel} 
-            onChange={(e) => setAvgLevel(parseInt(e.target.value) || 1)} 
-            style={{ width: '80px' }}
-          >
-            {[...Array(20)].map((_, i) => (
-              <option key={i+1} value={i+1}>{i+1}</option>
-            ))}
-          </select>
-        </div>
+            ←
+          </button>
+        )}
+        <h1 className="text-xl font-bold">Grimoire</h1>
       </div>
+
+      <button
+        onClick={toggleTheme}
+        className="text-2xl leading-none hover:opacity-70 transition"
+        aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+      >
+        {theme === 'light' ? '🌙' : '☀️'}
+      </button>
     </header>
   );
 }
