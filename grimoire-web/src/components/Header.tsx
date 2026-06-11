@@ -9,7 +9,7 @@ export default function Header() {
   const isHome = location.pathname === '/';
 
   return (
-    <header className="bg-[var(--header-bg)] text-[var(--text-primary)] px-4 py-4 safe-top flex items-center justify-between">
+    <header className="bg-[var(--header-bg)] text-[#F8F7F4] px-4 py-4 pt-[max(1rem,env(safe-area-inset-top))] flex items-center justify-between">
       <div className="flex items-center gap-3">
         {!isHome && (
           <button

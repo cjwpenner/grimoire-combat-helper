@@ -14,3 +14,7 @@ dist/
 # IDEs
 .vscode/
 .idea/
+
+# Claude Code local settings & browser test artifacts
+.claude/settings.local.json
+.playwright-mcp/

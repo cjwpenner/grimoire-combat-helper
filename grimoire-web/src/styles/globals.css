@@ -1,3 +1,14 @@
+@import "tailwindcss";
+
+/* The app toggles theme via the data-theme attribute, not the .dark class */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@theme {
+  /* iOS notch / home-indicator insets: enables pt-safe-top, pb-safe-bottom */
+  --spacing-safe-top: env(safe-area-inset-top);
+  --spacing-safe-bottom: env(safe-area-inset-bottom);
+}
+
 :root[data-theme='light'] {
   --bg-primary: #F8F7F4;
   --text-primary: #1A1A1A;

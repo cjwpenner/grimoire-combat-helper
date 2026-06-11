@@ -1,16 +1,10 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useOutletContext } from 'react-router-dom';
-import { Monster } from '../lib/models';
 import { selectTurn, TurnData } from '../lib/selector';
 import StatBlock from './StatBlock';
 import { CombatTurn } from './CombatTurn';
-
-interface LayoutContextType {
-  monsters: Monster[];
-  partySize: number;
-  avgLevel: number;
-}
+import { LayoutContextType } from './Layout';
 
 export default function MonsterDetail() {
   const { id } = useParams<{ id: string }>();

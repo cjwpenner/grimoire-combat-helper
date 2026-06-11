@@ -9,7 +9,7 @@ function App() {
   return (
     <ThemeProvider>
       <NavigationProvider>
-        <BrowserRouter basename="/grimoire">
+        <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '')}>
           <Routes>
             <Route element={<Layout />}>
               <Route path="/" element={<MonsterPicker />} />

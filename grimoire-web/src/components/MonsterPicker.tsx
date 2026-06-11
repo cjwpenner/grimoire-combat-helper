@@ -1,24 +1,16 @@
 import React, { useState, useMemo } from 'react';
 import { useNavigate, useOutletContext } from 'react-router-dom';
-import { Monster } from '../lib/models';
 import { calculateDifficulty } from '../lib/difficulty';
 import MonsterCard from './MonsterCard';
-
-interface LayoutContextType {
-  monsters: Monster[];
-  partySize: number;
-  avgLevel: number;
-}
-
-interface PartyConfig {
-  size: number;
-  level: number;
-}
+import { LayoutContextType } from './Layout';
 
 export function MonsterPicker() {
-  const { monsters } = useOutletContext<LayoutContextType>();
+  // Party config lives in Layout's context so it survives navigation and
+  // stays in sync with the difficulty shown on the detail page.
+  const { monsters, partySize, setPartySize, avgLevel, setAvgLevel } =
+    useOutletContext<LayoutContextType>();
   const navigate = useNavigate();
-  const [partyConfig, setPartyConfig] = useState<PartyConfig>({ size: 4, level: 3 });
+  const partyConfig = { size: partySize, level: avgLevel };
   const [searchTerm, setSearchTerm] = useState('');
   const [difficultyFilter, setDifficultyFilter] = useState<string>('all');
 
@@ -55,8 +47,8 @@ export function MonsterPicker() {
             type="number"
             min="1"
             max="8"
-            value={partyConfig.size}
-            onChange={(e) => setPartyConfig(prev => ({ ...prev, size: parseInt(e.target.value) || 1 }))}
+            value={partySize}
+            onChange={(e) => setPartySize(parseInt(e.target.value) || 1)}
             className="w-full px-3 py-2 rounded border border-[var(--border-color)] bg-[var(--card-bg)] text-[var(--text-primary)]"
           />
         </div>
@@ -66,8 +58,8 @@ export function MonsterPicker() {
             type="number"
             min="1"
             max="20"
-            value={partyConfig.level}
-            onChange={(e) => setPartyConfig(prev => ({ ...prev, level: parseInt(e.target.value) || 1 }))}
+            value={avgLevel}
+            onChange={(e) => setAvgLevel(parseInt(e.target.value) || 1)}
             className="w-full px-3 py-2 rounded border border-[var(--border-color)] bg-[var(--card-bg)] text-[var(--text-primary)]"
           />
         </div>
