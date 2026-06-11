@@ -16,7 +16,7 @@ export function MonsterCard() {
   const navigate = useNavigate();
   const { monsters, partySize, avgLevel } = useOutletContext<LayoutContextType>();
 
-  const monster = monsters.find(m => m.id === id);
+  const monster = id ? monsters.find(m => m.id === parseInt(id)) : undefined;
 
   if (!monster) {
     return <div className="text-muted text-center mt-4">Monster not found.</div>;
