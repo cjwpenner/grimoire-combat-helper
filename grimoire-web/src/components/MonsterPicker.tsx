@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { useNavigate, useOutletContext } from 'react-router-dom';
 import { Monster } from '../lib/models';
 import { calculateDifficulty } from '../lib/difficulty';
+import MonsterCard from './MonsterCard';
 
 interface LayoutContextType {
   monsters: Monster[];
@@ -9,82 +10,116 @@ interface LayoutContextType {
   avgLevel: number;
 }
 
-export function MonsterPicker() {
-  const { monsters, partySize, avgLevel } = useOutletContext<LayoutContextType>();
-  const navigate = useNavigate();
-  const [searchTerm, setSearchTerm] = useState('');
-  const [typeFilter, setTypeFilter] = useState('');
-  const [diffFilter, setDiffFilter] = useState('');
+interface PartyConfig {
+  size: number;
+  level: number;
+}
 
-  const types = useMemo(() => Array.from(new Set(monsters.map(m => m.type))).sort(), [monsters]);
+export function MonsterPicker() {
+  const { monsters } = useOutletContext<LayoutContextType>();
+  const navigate = useNavigate();
+  const [partyConfig, setPartyConfig] = useState<PartyConfig>({ size: 4, level: 3 });
+  const [searchTerm, setSearchTerm] = useState('');
+  const [difficultyFilter, setDifficultyFilter] = useState<string>('all');
 
   const filteredMonsters = useMemo(() => {
-    return monsters.filter(m => {
-      const matchName = m.name.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchType = typeFilter ? m.type === typeFilter : true;
-      let matchDiff = true;
-      if (diffFilter) {
-        const diff = calculateDifficulty(m.xp, partySize, avgLevel);
-        if (diffFilter === 'Deadly') {
-          matchDiff = diff === 'Deadly' || diff === 'Beyond Deadly';
-        } else {
-          matchDiff = diff === diffFilter;
-        }
-      }
-      return matchName && matchType && matchDiff;
-    }).sort((a, b) => a.challenge_rating - b.challenge_rating);
-  }, [monsters, searchTerm, typeFilter, diffFilter, partySize, avgLevel]);
+    let filtered = monsters;
+
+    if (searchTerm) {
+      filtered = filtered.filter(m =>
+        m.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+
+    if (difficultyFilter !== 'all') {
+      filtered = filtered.filter(m => {
+        const difficulty = calculateDifficulty(m.xp, partyConfig.size, partyConfig.level);
+        return difficulty.toLowerCase() === difficultyFilter.toLowerCase();
+      });
+    }
+
+    return filtered.sort((a, b) => a.challenge_rating - b.challenge_rating);
+  }, [searchTerm, difficultyFilter, partyConfig, monsters]);
+
+  const handleSelectMonster = (monsterId: string) => {
+    navigate(`/monster/${monsterId}`);
+  };
 
   return (
-    <div className="glass-panel flex-col gap-4">
-      <div className="flex" style={{ gap: '1rem', flexWrap: 'wrap' }}>
-        <input 
-          placeholder="Search by name..." 
-          value={searchTerm} 
-          onChange={e => setSearchTerm(e.target.value)}
-          style={{ flex: 1, minWidth: '200px' }}
-        />
-        <select value={typeFilter} onChange={e => setTypeFilter(e.target.value)} style={{ flex: 1, minWidth: '150px' }}>
-          <option value="">All Types</option>
-          {types.map(t => <option key={t} value={t}>{t}</option>)}
-        </select>
-        <select value={diffFilter} onChange={e => setDiffFilter(e.target.value)} style={{ flex: 1, minWidth: '150px' }}>
-          <option value="">All Difficulties</option>
-          <option value="Easy">Easy</option>
-          <option value="Moderate">Moderate</option>
-          <option value="Hard">Hard</option>
-          <option value="Deadly">Deadly / Beyond</option>
-        </select>
+    <div className="w-full max-w-6xl mx-auto px-4 py-4">
+      {/* Party Config */}
+      <div className="grid grid-cols-2 gap-3 mb-6">
+        <div>
+          <label className="text-sm text-[var(--text-secondary)]">Party Size</label>
+          <input
+            type="number"
+            min="1"
+            max="8"
+            value={partyConfig.size}
+            onChange={(e) => setPartyConfig(prev => ({ ...prev, size: parseInt(e.target.value) || 1 }))}
+            className="w-full px-3 py-2 rounded border border-[var(--border-color)] bg-[var(--card-bg)] text-[var(--text-primary)]"
+          />
+        </div>
+        <div>
+          <label className="text-sm text-[var(--text-secondary)]">Avg Level</label>
+          <input
+            type="number"
+            min="1"
+            max="20"
+            value={partyConfig.level}
+            onChange={(e) => setPartyConfig(prev => ({ ...prev, level: parseInt(e.target.value) || 1 }))}
+            className="w-full px-3 py-2 rounded border border-[var(--border-color)] bg-[var(--card-bg)] text-[var(--text-primary)]"
+          />
+        </div>
       </div>
 
-      <div style={{ maxHeight: '600px', overflowY: 'auto', paddingRight: '0.5rem' }} className="flex-col gap-2">
-        {filteredMonsters.length === 0 && <div className="text-muted text-center mt-4">No monsters found.</div>}
-        {filteredMonsters.map(m => {
-          const diff = calculateDifficulty(m.xp, partySize, avgLevel);
-          let crStr = m.challenge_rating.toString();
-          if (m.challenge_rating === 0.125) crStr = "1/8";
-          else if (m.challenge_rating === 0.25) crStr = "1/4";
-          else if (m.challenge_rating === 0.5) crStr = "1/2";
-          
-          return (
-            <div
-              key={m.id}
-              className="glass-panel flex justify-between items-center"
-              style={{ cursor: 'pointer', padding: '1rem', background: 'rgba(255,255,255,0.02)', transition: 'background 0.2s ease' }}
-              onClick={() => navigate(`/monster/${m.id}`)}
-              onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.06)'}
-              onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.02)'}
-            >
-              <div>
-                <div className="font-semibold">{m.name}</div>
-                <div className="text-sm text-muted">CR {crStr} • {m.type}</div>
-              </div>
-              <div className="text-sm font-semibold" style={{ color: diff.includes('Deadly') ? 'var(--danger)' : diff === 'Hard' ? 'var(--warning)' : 'var(--text-main)' }}>
-                {diff}
-              </div>
-            </div>
-          );
-        })}
+      {/* Search */}
+      <input
+        type="text"
+        placeholder="Search monsters..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        className="w-full px-4 py-3 rounded-lg border border-[var(--border-color)] bg-[var(--card-bg)] text-[var(--text-primary)] mb-4 sticky top-0 z-10"
+      />
+
+      {/* Difficulty Filter Pills */}
+      <div className="flex gap-2 mb-6 overflow-x-auto pb-2">
+        {['all', 'easy', 'moderate', 'hard', 'deadly', 'beyond deadly'].map(diff => (
+          <button
+            key={diff}
+            onClick={() => setDifficultyFilter(diff)}
+            className={`px-4 py-2 rounded-full font-medium whitespace-nowrap transition ${
+              difficultyFilter === diff
+                ? 'bg-[var(--accent)] text-white opacity-100'
+                : 'bg-[var(--card-bg)] text-[var(--text-primary)] opacity-60'
+            }`}
+          >
+            {diff.charAt(0).toUpperCase() + diff.slice(1)}
+          </button>
+        ))}
+      </div>
+
+      {/* Monster Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {filteredMonsters.map(monster => (
+          <button
+            key={monster.id}
+            onClick={() => handleSelectMonster(monster.id.toString())}
+            className="text-left"
+          >
+            <MonsterCard monster={monster} partyConfig={partyConfig} />
+          </button>
+        ))}
+      </div>
+
+      {filteredMonsters.length === 0 && (
+        <div className="text-center py-12">
+          <p className="text-[var(--text-secondary)]">No monsters found.</p>
+        </div>
+      )}
+
+      <div className="text-center text-sm text-[var(--text-secondary)] mt-8">
+        Showing {filteredMonsters.length} of {monsters.length} monsters
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import { ThemeProvider } from './contexts/ThemeContext';
 import { NavigationProvider } from './contexts/NavigationContext';
 import Layout from './components/Layout';
 import { MonsterPicker } from './components/MonsterPicker';
-import { MonsterCard } from './components/MonsterCard';
+import { MonsterDetail } from './components/MonsterCard';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
           <Routes>
             <Route element={<Layout />}>
               <Route path="/" element={<MonsterPicker />} />
-              <Route path="/monster/:id" element={<MonsterCard />} />
+              <Route path="/monster/:id" element={<MonsterDetail />} />
             </Route>
           </Routes>
         </BrowserRouter>
