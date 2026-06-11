@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
-import { Header } from './Header';
+import Header from './Header';
 import { Monster } from '../lib/models';
 
 export default function Layout() {
