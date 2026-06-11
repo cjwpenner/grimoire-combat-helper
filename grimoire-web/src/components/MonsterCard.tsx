@@ -1,17 +1,26 @@
 import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate, useOutletContext } from 'react-router-dom';
 import { Monster } from '../lib/models';
 import { calculateDifficulty } from '../lib/difficulty';
 import { selectTurn, TurnData } from '../lib/selector';
 import { CombatTurn } from './CombatTurn';
 
-interface Props {
-  monster: Monster;
+interface LayoutContextType {
+  monsters: Monster[];
   partySize: number;
   avgLevel: number;
-  onBack: () => void;
 }
 
-export function MonsterCard({ monster, partySize, avgLevel, onBack }: Props) {
+export function MonsterCard() {
+  const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
+  const { monsters, partySize, avgLevel } = useOutletContext<LayoutContextType>();
+
+  const monster = monsters.find(m => m.id === id);
+
+  if (!monster) {
+    return <div className="text-muted text-center mt-4">Monster not found.</div>;
+  }
   const [turns, setTurns] = useState<TurnData[]>([]);
   
   useEffect(() => {
@@ -29,7 +38,7 @@ export function MonsterCard({ monster, partySize, avgLevel, onBack }: Props) {
 
   return (
     <div className="flex-col gap-4">
-      <button onClick={onBack} style={{ alignSelf: 'flex-start', background: 'transparent', border: '1px solid var(--panel-border)' }}>
+      <button onClick={() => navigate('/')} style={{ alignSelf: 'flex-start', background: 'transparent', border: '1px solid var(--panel-border)' }}>
         ← Back to list
       </button>
 

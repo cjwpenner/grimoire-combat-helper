@@ -1,15 +1,17 @@
 import React, { useState, useMemo } from 'react';
+import { useNavigate, useOutletContext } from 'react-router-dom';
 import { Monster } from '../lib/models';
 import { calculateDifficulty } from '../lib/difficulty';
 
-interface MonsterPickerProps {
+interface LayoutContextType {
   monsters: Monster[];
   partySize: number;
   avgLevel: number;
-  onSelect: (m: Monster) => void;
 }
 
-export function MonsterPicker({ monsters, partySize, avgLevel, onSelect }: MonsterPickerProps) {
+export function MonsterPicker() {
+  const { monsters, partySize, avgLevel } = useOutletContext<LayoutContextType>();
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   const [typeFilter, setTypeFilter] = useState('');
   const [diffFilter, setDiffFilter] = useState('');
@@ -65,11 +67,11 @@ export function MonsterPicker({ monsters, partySize, avgLevel, onSelect }: Monst
           else if (m.challenge_rating === 0.5) crStr = "1/2";
           
           return (
-            <div 
-              key={m.id} 
-              className="glass-panel flex justify-between items-center" 
+            <div
+              key={m.id}
+              className="glass-panel flex justify-between items-center"
               style={{ cursor: 'pointer', padding: '1rem', background: 'rgba(255,255,255,0.02)', transition: 'background 0.2s ease' }}
-              onClick={() => onSelect(m)}
+              onClick={() => navigate(`/monster/${m.id}`)}
               onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.06)'}
               onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.02)'}
             >
