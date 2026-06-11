@@ -247,3 +247,32 @@ Still needed: Create `docs/how-to-publish.md` with:
 ---
 
 *Session initiated: 2026-06-11 | Using subagent-driven development for maximum quality and control.*
+
+---
+
+## ADDENDUM — Session 2 (2026-06-11, later): ALL TASKS COMPLETE ✅
+
+Tasks 14–19 finished and the app is **live at https://dandmonsters.com/** (the
+repo's GitHub Pages custom domain — not the github.io URL guessed above).
+Deploys run automatically via `.github/workflows/deploy.yml` on push to master.
+
+Beyond the planned tasks, session 2 found and fixed issues the plan missed:
+
+1. **Tailwind was never installed** — every utility class in the components was
+   inert; the app was rendering with leftover legacy CSS. Installed Tailwind v4
+   (`@tailwindcss/vite`), added a `data-theme` dark variant, and slimmed
+   `index.css` to a compat layer remapping legacy vars onto the theme.
+2. **Build was broken** — `Layout` passed props `Header` no longer accepts.
+3. **Party config desync** — picker and detail page used separate state;
+   lifted into Layout's outlet context.
+4. **Service worker bugs** — `grimoire.json` was never actually cached;
+   hashed JS/CSS bundles weren't precached (offline = blank page);
+   `Vary: Origin` broke cache matches; no SPA navigation fallback. All fixed
+   and verified by killing the server and deep-linking (full offline render).
+5. **Base-path mismatch** — everything hardcoded `/grimoire/`; now derived
+   from `vite.config.ts` (`base: '/'` for the custom domain).
+6. **Icons** — real d20 app icons + favicon replace the 0-byte placeholders.
+7. **Deep links** — `404.html` fallback added for GitHub Pages.
+
+`docs/how-to-publish.md` covers deployment, PWA install (iOS/Android),
+testing checklist, and app-store wrapper options.
