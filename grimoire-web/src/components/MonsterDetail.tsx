@@ -61,10 +61,11 @@ export default function MonsterDetail() {
       {/* Tab Content */}
       {tab === 'stat' && (
         <div className="flex flex-col gap-4">
+          {/* Artwork is authored square; keep a 1:1 frame so nothing gets cropped */}
           <img
             src={monsterImageUrl(monster)}
             alt={monster.name}
-            className="w-full max-h-80 object-cover object-center rounded-xl border border-[var(--border-color)]"
+            className="w-full max-w-sm mx-auto aspect-square object-cover rounded-xl border border-[var(--border-color)]"
             onError={(e) => { e.currentTarget.style.display = 'none'; }}
           />
           <StatBlock monster={monster} partyConfig={partyConfig} />
