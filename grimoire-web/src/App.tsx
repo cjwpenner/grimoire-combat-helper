@@ -3,7 +3,7 @@ import { ThemeProvider } from './contexts/ThemeContext';
 import { NavigationProvider } from './contexts/NavigationContext';
 import Layout from './components/Layout';
 import { MonsterPicker } from './components/MonsterPicker';
-import { MonsterDetail } from './components/MonsterCard';
+import MonsterDetail from './components/MonsterDetail';
 
 function App() {
   return (
